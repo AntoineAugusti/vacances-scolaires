@@ -13,6 +13,6 @@ target_year = args.target_year
 current_date = date(target_year, 1, 1)
 
 while current_date.year == target_year:
-    current_date = current_date + timedelta(days=1)
     date = current_date.strftime('%Y-%m-%d')
     print(date + ',False,False,False,')
+    current_date = current_date + timedelta(days=1)
