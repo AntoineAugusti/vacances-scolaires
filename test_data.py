@@ -7,12 +7,36 @@ import pandas as pd
 
 class DataTest(unittest.TestCase):
     START_YEAR, END_YEAR = 2008, 2020
+    HOLIDAY_NAMES = [
+        'Vacances de la Toussaint',
+        'Vacances de Noël',
+        "Vacances d'hiver",
+        'Vacances de printemps',
+        "Vacances d'été"
+    ]
+    ZONES = ['A', 'B', 'C']
 
     def data(self):
         return pd.read_csv(
             'data.csv',
             parse_dates=['date']
         )
+
+    def col_zone(self, zone):
+        if zone not in self.ZONES:
+            raise ValueError
+        return 'vacances_zone_' + zone.lower()
+
+    def data_with_holiday(self):
+        def on_holiday(row):
+            res = False
+            for zone in self.ZONES:
+                res = res or row[self.col_zone(zone)]
+            return res
+        df = self.data()
+        df['on_holiday'] = df.apply(lambda row: on_holiday(row), axis=1)
+
+        return df
 
     def test_columns(self):
         expected = [
@@ -34,21 +58,13 @@ class DataTest(unittest.TestCase):
         )
 
     def test_nom_vacances(self):
-        expected = [
-            'Vacances de la Toussaint',
-            'Vacances de Noël',
-            "Vacances d'hiver",
-            'Vacances de printemps',
-            "Vacances d'été"
-        ]
-
         self.assertEquals(
             list(self.data().nom_vacances.dropna().unique()),
-            expected
+            self.HOLIDAY_NAMES
         )
 
     def test_boolean_values(self):
-        cols = ['vacances_zone_a', 'vacances_zone_b', 'vacances_zone_c']
+        cols = map(self.col_zone, self.ZONES)
 
         for col in cols:
             self.assertEquals(self.data()[col].dtype, bool)
@@ -59,13 +75,7 @@ class DataTest(unittest.TestCase):
             )
 
     def test_holiday_name_set_but_not_on_holiday(self):
-        def on_holiday(row):
-            return row['vacances_zone_a'] or \
-                row['vacances_zone_b'] or \
-                row['vacances_zone_c']
-
-        df = self.data()
-        df['on_holiday'] = df.apply(lambda row: on_holiday(row), axis=1)
+        df = self.data_with_holiday()
 
         impossible = df[~df.on_holiday & ~df.nom_vacances.isna()]
 
@@ -73,4 +83,45 @@ class DataTest(unittest.TestCase):
             impossible.shape,
             (0, 6),
             impossible
+        )
+
+    def test_on_holiday_without_holidayname(self):
+        df = self.data_with_holiday()
+
+        impossible = df[df.on_holiday & df.nom_vacances.isna()]
+
+        self.assertEquals(
+            impossible.shape,
+            (0, 6),
+            impossible
+        )
+
+    def test_no_gap_in_holidays(self):
+        df = self.data()
+        df_shifted = df.shift(periods=1)
+
+        # Count number of times we start and end holidays.
+        # It counts for each holiday the change from False to True and
+        # True to False
+        nb_years = (self.END_YEAR - self.START_YEAR + 1)
+        nb_missing_holidays = 6
+        nb_holidays = (nb_years * len(self.HOLIDAY_NAMES) - nb_missing_holidays)
+        expected = nb_holidays * 2
+
+        for zone in self.ZONES:
+            diff = df_shifted[self.col_zone(zone)] - df[self.col_zone(zone)]
+
+            self.assertEquals(
+                diff.abs().sum(),
+                expected,
+                'Zone {zone} seems to have a gap'.format(zone=zone)
+            )
+
+        # Detect a faulty sequence for nom_vacances like:
+        # ['Vacances d'hiver', 'Vacances d'hiver', 'Vacances de la Toussaint']
+        diff = df_shifted['nom_vacances'].fillna('') != df['nom_vacances'].fillna('')
+
+        self.assertEquals(
+            diff.sum(),
+            expected
         )
