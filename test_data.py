@@ -57,3 +57,20 @@ class DataTest(unittest.TestCase):
                 set(self.data()[col].unique()),
                 set([False, True])
             )
+
+    def test_holiday_name_set_but_not_on_holiday(self):
+        def on_holiday(row):
+            return row['vacances_zone_a'] or \
+                row['vacances_zone_b'] or \
+                row['vacances_zone_c']
+
+        df = self.data()
+        df['on_holiday'] = df.apply(lambda row: on_holiday(row), axis=1)
+
+        impossible = df[~df.on_holiday & ~df.nom_vacances.isna()]
+
+        self.assertEquals(
+            impossible.shape,
+            (0, 6),
+            impossible
+        )
