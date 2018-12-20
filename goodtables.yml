@@ -1,0 +1,4 @@
+files:
+  - source: data.csv
+    schema: schema.json
+    encoding: utf-8
