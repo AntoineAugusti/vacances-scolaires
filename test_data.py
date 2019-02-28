@@ -6,7 +6,7 @@ import pandas as pd
 
 
 class DataTest(unittest.TestCase):
-    START_YEAR, END_YEAR = 2008, 2020
+    START_YEAR, END_YEAR = 1990, 2020
     HOLIDAY_NAMES = [
         'Vacances de la Toussaint',
         'Vacances de Noël',
@@ -59,8 +59,8 @@ class DataTest(unittest.TestCase):
 
     def test_nom_vacances(self):
         self.assertEquals(
-            list(self.data().nom_vacances.dropna().unique()),
-            self.HOLIDAY_NAMES
+            sorted(list(self.data().nom_vacances.dropna().unique())),
+            sorted(self.HOLIDAY_NAMES)
         )
 
     def test_boolean_values(self):
@@ -104,7 +104,7 @@ class DataTest(unittest.TestCase):
         # It counts for each holiday the change from False to True and
         # True to False
         nb_years = (self.END_YEAR - self.START_YEAR + 1)
-        nb_missing_holidays = 6
+        nb_missing_holidays = 5
         nb_holidays = (nb_years * len(self.HOLIDAY_NAMES) - nb_missing_holidays)
         expected = nb_holidays * 2
 
@@ -125,3 +125,6 @@ class DataTest(unittest.TestCase):
             diff.sum(),
             expected
         )
+
+if __name__ == '__main__':
+    unittest.main()
