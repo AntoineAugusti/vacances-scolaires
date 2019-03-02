@@ -11,4 +11,7 @@ Le jeu de données est un fichier CSV composé des colonnes suivante :
 - `vacances_zone_c` : booléen - indique si cette journée est une journée de vacances pour la zone C. Exemple : False
 - `nom_vacances` : string - Nom des vacances.
 
-Période de couverture : 1990-01-01 - 2021-01-01
+Période de couverture : 1990-01-01 - 2021-01-01.
+
+## Package Python
+Si vous souhaitez utiliser ces données en Python le package suivant vous sera utile : https://github.com/AntoineAugusti/vacances-scolaires-france
