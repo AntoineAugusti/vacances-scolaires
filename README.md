@@ -2,16 +2,17 @@
 [![goodtables.io](https://goodtables.io/badge/github/AntoineAugusti/vacances-scolaires.svg)](https://goodtables.io/github/AntoineAugusti/vacances-scolaires)
 
 # Vacances scolaires
-Contient les vacances scolaires des zones A, B et C en France.
+Recense les vacances scolaires en France de l'année scolaire 1990/1991 à l'année scolaire 2019/2020 dans un fichier CSV unique.
 
-Le jeu de données est un fichier CSV composé des colonnes suivante :
-- `date` : date - date. Exemple : 2012-04-23 
-- `vacances_zone_a` : booléen - indique si cette journée est une journée de vacances pour la zone A. Exemple : False
-- `vacances_zone_b` : booléen - indique si cette journée est une journée de vacances pour la zone B. Exemple : False
-- `vacances_zone_c` : booléen - indique si cette journée est une journée de vacances pour la zone C. Exemple : False
-- `nom_vacances` : string - Nom des vacances.
+## Modèle de données
 
-Période de couverture : 1990-01-01 - 2021-01-01.
+|Nom|Type|Description|Exemple|Propriétés|
+|-|-|-|-|-|
+|date|date (format `%Y-%m-%d`)|Date|2018-01-01|Valeur obligatoire|
+|vacances_zone_a|booléen|Est-ce que la zone A est en vacances à cette date|true, false|Valeur obligatoire|
+|vacances_zone_b|booléen|Est-ce que la zone B est en vacances à cette date|true, false|Valeur obligatoire|
+|vacances_zone_c|booléen|Est-ce que la zone C est en vacances à cette date|true, false|Valeur obligatoire|
+|nom_vacances|chaîne de caractères|Si au moins une des zones est en vacances, le nom des vacances|true, false|Valeurs autorisées : Vacances de la Toussaint, Vacances de Noël, Vacances d'hiver, Vacances de printemps, Vacances d'été, Pont de l'Ascension|
 
 ## Package Python
 Si vous souhaitez utiliser ces données en Python le package suivant vous sera utile : https://github.com/AntoineAugusti/vacances-scolaires-france
