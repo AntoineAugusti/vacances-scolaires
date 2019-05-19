@@ -101,6 +101,18 @@ class DataTest(unittest.TestCase):
             ),
         )
 
+    def test_fresh_data(self):
+        the_date = datetime.datetime.utcnow().date()
+
+        # Assume school holidays are published more than a year
+        # in advance in July
+        if the_date.month <= 7:
+            target_year = the_date.year + 1
+        else:
+            target_year = the_date.year + 2
+
+        self.assertEquals(target_year, self.END_YEAR, "Data is not fresh enough")
+
     def test_no_gap_in_holidays(self):
         df = self.data()
         # Remove Ascension holidays
