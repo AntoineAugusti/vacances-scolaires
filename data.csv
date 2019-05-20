@@ -2222,22 +2222,22 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 1996-01-30,False,False,False,
 1996-01-31,False,False,False,
 1996-02-01,False,False,False,
-1996-02-02,False,False,True,Vacances d'hiver
-1996-02-03,False,False,True,Vacances d'hiver
-1996-02-04,False,False,True,Vacances d'hiver
-1996-02-05,False,False,True,Vacances d'hiver
-1996-02-06,False,False,True,Vacances d'hiver
-1996-02-07,False,False,True,Vacances d'hiver
-1996-02-08,False,False,True,Vacances d'hiver
-1996-02-09,False,False,True,Vacances d'hiver
-1996-02-10,False,False,True,Vacances d'hiver
-1996-02-11,False,False,True,Vacances d'hiver
-1996-02-12,False,False,True,Vacances d'hiver
-1996-02-13,False,False,True,Vacances d'hiver
-1996-02-14,False,False,True,Vacances d'hiver
-1996-02-15,False,False,True,Vacances d'hiver
-1996-02-16,False,False,True,Vacances d'hiver
-1996-02-17,False,True,True,Vacances d'hiver
+1996-02-02,False,False,False,
+1996-02-03,False,False,False,
+1996-02-04,False,False,False,
+1996-02-05,False,False,False,
+1996-02-06,False,False,False,
+1996-02-07,False,False,False,
+1996-02-08,False,False,False,
+1996-02-09,False,False,False,
+1996-02-10,False,False,False,
+1996-02-11,False,False,False,
+1996-02-12,False,False,False,
+1996-02-13,False,False,False,
+1996-02-14,False,False,False,
+1996-02-15,False,False,False,
+1996-02-16,False,False,False,
+1996-02-17,False,True,False,Vacances d'hiver
 1996-02-18,False,True,False,Vacances d'hiver
 1996-02-19,False,True,False,Vacances d'hiver
 1996-02-20,False,True,False,Vacances d'hiver
@@ -2251,22 +2251,22 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 1996-02-28,True,True,False,Vacances d'hiver
 1996-02-29,True,True,False,Vacances d'hiver
 1996-03-01,True,True,False,Vacances d'hiver
-1996-03-02,True,True,False,Vacances d'hiver
-1996-03-03,True,True,False,Vacances d'hiver
-1996-03-04,True,False,False,Vacances d'hiver
-1996-03-05,True,False,False,Vacances d'hiver
-1996-03-06,True,False,False,Vacances d'hiver
-1996-03-07,True,False,False,Vacances d'hiver
-1996-03-08,True,False,False,Vacances d'hiver
-1996-03-09,True,False,False,Vacances d'hiver
-1996-03-10,True,False,False,Vacances d'hiver
-1996-03-11,False,False,False,
-1996-03-12,False,False,False,
-1996-03-13,False,False,False,
-1996-03-14,False,False,False,
-1996-03-15,False,False,False,
-1996-03-16,False,False,False,
-1996-03-17,False,False,False,
+1996-03-02,True,True,True,Vacances d'hiver
+1996-03-03,True,True,True,Vacances d'hiver
+1996-03-04,True,False,True,Vacances d'hiver
+1996-03-05,True,False,True,Vacances d'hiver
+1996-03-06,True,False,True,Vacances d'hiver
+1996-03-07,True,False,True,Vacances d'hiver
+1996-03-08,True,False,True,Vacances d'hiver
+1996-03-09,True,False,True,Vacances d'hiver
+1996-03-10,True,False,True,Vacances d'hiver
+1996-03-11,False,False,True,Vacances d'hiver
+1996-03-12,False,False,True,Vacances d'hiver
+1996-03-13,False,False,True,Vacances d'hiver
+1996-03-14,False,False,True,Vacances d'hiver
+1996-03-15,False,False,True,Vacances d'hiver
+1996-03-16,False,False,True,Vacances d'hiver
+1996-03-17,False,False,True,Vacances d'hiver
 1996-03-18,False,False,False,
 1996-03-19,False,False,False,
 1996-03-20,False,False,False,
