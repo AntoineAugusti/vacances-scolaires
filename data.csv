@@ -4561,7 +4561,7 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 2002-06-26,False,False,False,
 2002-06-27,False,False,False,
 2002-06-28,False,False,False,
-2002-06-29,False,False,False,
+2002-06-29,True,True,True,Vacances d'été
 2002-06-30,True,True,True,Vacances d'été
 2002-07-01,True,True,True,Vacances d'été
 2002-07-02,True,True,True,Vacances d'été
