@@ -774,13 +774,13 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 1992-02-12,False,False,False,
 1992-02-13,False,False,False,
 1992-02-14,False,False,False,
-1992-02-15,False,False,False,
-1992-02-16,False,False,False,
-1992-02-17,False,False,False,
-1992-02-18,False,False,False,
-1992-02-19,False,False,False,
-1992-02-20,False,False,False,
-1992-02-21,False,False,False,
+1992-02-15,True,False,False,Vacances d'hiver
+1992-02-16,True,False,False,Vacances d'hiver
+1992-02-17,True,False,False,Vacances d'hiver
+1992-02-18,True,False,False,Vacances d'hiver
+1992-02-19,True,False,False,Vacances d'hiver
+1992-02-20,True,False,False,Vacances d'hiver
+1992-02-21,True,False,False,Vacances d'hiver
 1992-02-22,True,True,False,Vacances d'hiver
 1992-02-23,True,True,False,Vacances d'hiver
 1992-02-24,True,True,False,Vacances d'hiver
@@ -790,13 +790,13 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 1992-02-28,True,True,False,Vacances d'hiver
 1992-02-29,True,True,True,Vacances d'hiver
 1992-03-01,True,True,True,Vacances d'hiver
-1992-03-02,True,True,True,Vacances d'hiver
-1992-03-03,True,True,True,Vacances d'hiver
-1992-03-04,True,True,True,Vacances d'hiver
-1992-03-05,True,True,True,Vacances d'hiver
-1992-03-06,True,True,True,Vacances d'hiver
-1992-03-07,True,True,True,Vacances d'hiver
-1992-03-08,True,True,True,Vacances d'hiver
+1992-03-02,False,True,True,Vacances d'hiver
+1992-03-03,False,True,True,Vacances d'hiver
+1992-03-04,False,True,True,Vacances d'hiver
+1992-03-05,False,True,True,Vacances d'hiver
+1992-03-06,False,True,True,Vacances d'hiver
+1992-03-07,False,True,True,Vacances d'hiver
+1992-03-08,False,True,True,Vacances d'hiver
 1992-03-09,False,False,True,Vacances d'hiver
 1992-03-10,False,False,True,Vacances d'hiver
 1992-03-11,False,False,True,Vacances d'hiver
