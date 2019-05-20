@@ -3348,10 +3348,10 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 1999-03-01,False,False,True,Vacances d'hiver
 1999-03-02,False,False,True,Vacances d'hiver
 1999-03-03,False,False,True,Vacances d'hiver
-1999-03-04,False,False,False,
-1999-03-05,False,False,False,
-1999-03-06,False,False,False,
-1999-03-07,False,False,False,
+1999-03-04,False,False,True,Vacances d'hiver
+1999-03-05,False,False,True,Vacances d'hiver
+1999-03-06,False,False,True,Vacances d'hiver
+1999-03-07,False,False,True,Vacances d'hiver
 1999-03-08,False,False,False,
 1999-03-09,False,False,False,
 1999-03-10,False,False,False,
