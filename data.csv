@@ -979,9 +979,9 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 1992-09-04,True,True,True,Vacances d'été
 1992-09-05,True,True,True,Vacances d'été
 1992-09-06,True,True,True,Vacances d'été
-1992-09-07,True,True,False,Vacances d'été
-1992-09-08,True,True,False,Vacances d'été
-1992-09-09,True,True,False,Vacances d'été
+1992-09-07,True,True,True,Vacances d'été
+1992-09-08,True,True,True,Vacances d'été
+1992-09-09,True,True,True,Vacances d'été
 1992-09-10,False,False,False,
 1992-09-11,False,False,False,
 1992-09-12,False,False,False,
