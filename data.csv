@@ -2616,10 +2616,10 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 1997-02-27,True,False,False,Vacances d'hiver
 1997-02-28,True,False,False,Vacances d'hiver
 1997-03-01,True,False,False,Vacances d'hiver
-1997-03-02,False,False,False,
-1997-03-03,False,False,False,
-1997-03-04,False,False,False,
-1997-03-05,False,False,False,
+1997-03-02,True,False,False,Vacances d'hiver
+1997-03-03,True,False,False,Vacances d'hiver
+1997-03-04,True,False,False,Vacances d'hiver
+1997-03-05,True,False,False,Vacances d'hiver
 1997-03-06,False,False,False,
 1997-03-07,False,False,False,
 1997-03-08,False,False,False,
