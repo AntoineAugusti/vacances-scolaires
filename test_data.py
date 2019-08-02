@@ -105,8 +105,8 @@ class DataTest(unittest.TestCase):
         the_date = datetime.datetime.utcnow().date()
 
         # Assume school holidays are published more than a year
-        # in advance in July
-        if the_date.month <= 7:
+        # in advance in August
+        if the_date.month <= 8:
             target_year = the_date.year + 1
         else:
             target_year = the_date.year + 2
