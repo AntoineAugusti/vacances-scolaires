@@ -2,8 +2,6 @@ workflows:
   version: 2
   test:
     jobs:
-      - test-2.7
-      - test-3.5
       - test-3.6
       - test-latest
   cron:
@@ -15,8 +13,6 @@ workflows:
               only:
                 - master
     jobs:
-      - test-2.7
-      - test-3.5
       - test-3.6
       - test-latest
 jobs:
@@ -54,18 +50,6 @@ jobs:
           command: |
             . venv/bin/activate
             nosetests .
-  test-3.5:
-    <<: *test-template
-    docker:
-      - image: circleci/python:3.5
-    environment:
-      PYTHON_VERSION=3.5
-  test-2.7:
-    <<: *test-template
-    docker:
-      - image: circleci/python:2.7
-    environment:
-      PYTHON_VERSION=2.7
   test-latest:
     <<: *test-template
     docker:
