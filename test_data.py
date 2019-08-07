@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
-import datetime
+from datetime import datetime
+from datetime import timedelta
 import json
 import urllib.request
 
@@ -9,6 +10,7 @@ import pandas as pd
 
 class DataTest(unittest.TestCase):
     START_YEAR, END_YEAR = 1990, 2020
+    DILA_JSON_URL = "https://gitlab.com/pidila/sp-simulateurs-data/raw/master/donnees-de-reference/VacancesScolaires.json"
     HOLIDAY_NAMES = [
         "Vacances de la Toussaint",
         "Vacances de Noël",
@@ -50,8 +52,8 @@ class DataTest(unittest.TestCase):
         self.assertEquals(list(self.data().columns), expected)
 
     def test_no_missing_dates(self):
-        start = datetime.datetime(self.START_YEAR, 1, 1)
-        end = datetime.datetime(self.END_YEAR, 12, 31)
+        start = datetime(self.START_YEAR, 1, 1)
+        end = datetime(self.END_YEAR, 12, 31)
 
         pd.testing.assert_series_equal(
             self.data().date,
@@ -104,7 +106,7 @@ class DataTest(unittest.TestCase):
         )
 
     def test_fresh_data(self):
-        the_date = datetime.datetime.utcnow().date()
+        the_date = datetime.utcnow().date()
 
         # Assume school holidays are published more than a year
         # in advance in August
@@ -149,10 +151,8 @@ class DataTest(unittest.TestCase):
 
         self.assertEquals(diff.sum(), expected)
 
-    def test_dila(self):
-        with urllib.request.urlopen(
-            "https://gitlab.com/pidila/sp-simulateurs-data/raw/master/donnees-de-reference/VacancesScolaires.json"
-        ) as url:
+    def test_with_dila_data(self):
+        with urllib.request.urlopen(self.DILA_JSON_URL) as url:
             holidays = json.loads(url.read().decode())["Calendrier"]
 
         zones_cols = [f"Zone {zone}" for zone in self.ZONES]
@@ -172,12 +172,30 @@ class DataTest(unittest.TestCase):
             zone = holiday["Zone"].replace("Zone ", "")
             start, end = holiday["Debut"], holiday["Fin"]
 
+            # All dates between start and end are on holiday
             self.assertEquals(
                 df.loc[(df["date"] >= start) & (df["date"] < end)][
-                    f"vacances_zone_{zone.lower()}"
+                    self.col_zone(zone)
                 ].all(),
                 True,
                 f"Zone {zone} holidays from {start} to {end} have an issue. DILA data is different",
+            )
+
+            # End date is not on holiday
+            end_date_value = df.loc[df["date"] == end, self.col_zone(zone)].item()
+            self.assertFalse(
+                end_date_value, f"Should not be on holiday for zone {zone} on {end}"
+            )
+
+            # The day before start date is not on holiday
+            start_date = datetime.strptime(start, "%Y-%m-%d")
+            before_holiday_date = start_date - timedelta(days=1)
+            start_date_value = df.loc[
+                df["date"] == before_holiday_date, self.col_zone(zone)
+            ].item()
+            self.assertFalse(
+                start_date_value,
+                f"Should not be on holiday for zone {zone} on {before_holiday_date}",
             )
 
 
