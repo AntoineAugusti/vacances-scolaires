@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import unittest
 import datetime
+import json
+import urllib.request
 
 import pandas as pd
 
@@ -146,6 +148,37 @@ class DataTest(unittest.TestCase):
         diff = df_shifted["nom_vacances"].fillna("") != df["nom_vacances"].fillna("")
 
         self.assertEquals(diff.sum(), expected)
+
+    def test_dila(self):
+        with urllib.request.urlopen(
+            "https://gitlab.com/pidila/sp-simulateurs-data/raw/master/donnees-de-reference/VacancesScolaires.json"
+        ) as url:
+            holidays = json.loads(url.read().decode())["Calendrier"]
+
+        zones_cols = [f"Zone {zone}" for zone in self.ZONES]
+        df = self.data()
+
+        for holiday in holidays:
+            # Skip DOM-TOM
+            if holiday["Zone"] not in zones_cols:
+                continue
+            # Skip special case
+            if "Ascension" in holiday["Description"]:
+                continue
+            # Unspecified end of holiday
+            if "Fin" not in holiday:
+                continue
+
+            zone = holiday["Zone"].replace("Zone ", "")
+            start, end = holiday["Debut"], holiday["Fin"]
+
+            self.assertEquals(
+                df.loc[(df["date"] >= start) & (df["date"] < end)][
+                    f"vacances_zone_{zone.lower()}"
+                ].all(),
+                True,
+                f"Zone {zone} holidays from {start} to {end} have an issue. DILA data is different",
+            )
 
 
 if __name__ == "__main__":
