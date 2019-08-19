@@ -2,7 +2,7 @@
 [![goodtables.io](https://goodtables.io/badge/github/AntoineAugusti/vacances-scolaires.svg)](https://goodtables.io/github/AntoineAugusti/vacances-scolaires)
 
 # Vacances scolaires
-Recense les vacances scolaires en France de l'année scolaire 1990/1991 à l'année scolaire 2019/2020 dans un fichier CSV unique.
+Recense les vacances scolaires en France de l'année scolaire 1990/1991 à l'année scolaire 2020/2021 dans un fichier CSV unique.
 
 ## Modèle de données
 

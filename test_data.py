@@ -9,7 +9,7 @@ import pandas as pd
 
 
 class DataTest(unittest.TestCase):
-    START_YEAR, END_YEAR = 1990, 2020
+    START_YEAR, END_YEAR = 1990, 2021
     DILA_JSON_URL = "https://gitlab.com/pidila/sp-simulateurs-data/raw/master/donnees-de-reference/VacancesScolaires.json"
     HOLIDAY_NAMES = [
         "Vacances de la Toussaint",
@@ -115,7 +115,7 @@ class DataTest(unittest.TestCase):
         else:
             target_year = the_date.year + 2
 
-        self.assertEquals(target_year, self.END_YEAR, "Data is not fresh enough")
+        self.assertLessEqual(target_year, self.END_YEAR, "Data is not fresh enough")
 
     def test_no_gap_in_holidays(self):
         df = self.data()
