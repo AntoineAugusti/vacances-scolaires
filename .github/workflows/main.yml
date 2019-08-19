@@ -4,12 +4,12 @@ on: [push]
 
 jobs:
   build:
-    name: Test on ${{ matrix.os }}
+    name: Test on ${{ matrix.os }} with Python ${{ matrix.python }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         python: ['3.x', '3.7', 'pypy3' ]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@master
       - name: Setup python
