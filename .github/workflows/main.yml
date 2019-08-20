@@ -1,6 +1,12 @@
 name: CI
 
-on: [push]
+on:
+ push:
+ schedule:
+   cron: "10 5 * * *"
+   branches:
+     - master
+ 
 
 jobs:
   build:
