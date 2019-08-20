@@ -6,7 +6,6 @@ on:
    cron: "10 5 * * *"
    branches:
      - master
- 
 
 jobs:
   build:
