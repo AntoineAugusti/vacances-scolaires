@@ -7,9 +7,10 @@ jobs:
     name: Test on ${{ matrix.os }} with Python ${{ matrix.python }}
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         python: ['3.x', '3.7', 'pypy3' ]
-        os: ['ubuntu-latest', 'macOS-latest']
+        os: ['ubuntu-latest']
     steps:
       - uses: actions/checkout@master
       - name: Setup python
