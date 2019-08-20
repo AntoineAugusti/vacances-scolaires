@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         python: ['3.x', '3.7', 'pypy3' ]
-        os: [ubuntu-latest]
+        os: ['ubuntu-latest', 'macOS-latest']
     steps:
       - uses: actions/checkout@master
       - name: Setup python
