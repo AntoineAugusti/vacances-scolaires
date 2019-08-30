@@ -9587,21 +9587,21 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 2016-03-30,False,False,False,
 2016-03-31,False,False,False,
 2016-04-01,False,False,False,
-2016-04-02,False,False,False,
+2016-04-02,False,True,False,Vacances de printemps
 2016-04-03,False,True,False,Vacances de printemps
 2016-04-04,False,True,False,Vacances de printemps
 2016-04-05,False,True,False,Vacances de printemps
 2016-04-06,False,True,False,Vacances de printemps
 2016-04-07,False,True,False,Vacances de printemps
 2016-04-08,False,True,False,Vacances de printemps
-2016-04-09,False,True,False,Vacances de printemps
+2016-04-09,True,True,False,Vacances de printemps
 2016-04-10,True,True,False,Vacances de printemps
 2016-04-11,True,True,False,Vacances de printemps
 2016-04-12,True,True,False,Vacances de printemps
 2016-04-13,True,True,False,Vacances de printemps
 2016-04-14,True,True,False,Vacances de printemps
 2016-04-15,True,True,False,Vacances de printemps
-2016-04-16,True,True,False,Vacances de printemps
+2016-04-16,True,True,True,Vacances de printemps
 2016-04-17,True,True,True,Vacances de printemps
 2016-04-18,True,False,True,Vacances de printemps
 2016-04-19,True,False,True,Vacances de printemps
