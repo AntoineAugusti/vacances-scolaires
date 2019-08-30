@@ -9166,21 +9166,21 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 2015-02-03,False,False,False,
 2015-02-04,False,False,False,
 2015-02-05,False,False,False,
-2015-02-06,False,False,False,
+2015-02-06,True,False,False,Vacances d'hiver
 2015-02-07,True,False,False,Vacances d'hiver
 2015-02-08,True,False,False,Vacances d'hiver
 2015-02-09,True,False,False,Vacances d'hiver
 2015-02-10,True,False,False,Vacances d'hiver
 2015-02-11,True,False,False,Vacances d'hiver
 2015-02-12,True,False,False,Vacances d'hiver
-2015-02-13,True,False,False,Vacances d'hiver
+2015-02-13,True,False,True,Vacances d'hiver
 2015-02-14,True,False,True,Vacances d'hiver
 2015-02-15,True,False,True,Vacances d'hiver
 2015-02-16,True,False,True,Vacances d'hiver
 2015-02-17,True,False,True,Vacances d'hiver
 2015-02-18,True,False,True,Vacances d'hiver
 2015-02-19,True,False,True,Vacances d'hiver
-2015-02-20,True,False,True,Vacances d'hiver
+2015-02-20,True,True,True,Vacances d'hiver
 2015-02-21,True,True,True,Vacances d'hiver
 2015-02-22,True,True,True,Vacances d'hiver
 2015-02-23,False,True,True,Vacances d'hiver
