@@ -9787,7 +9787,7 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 2016-10-16,False,False,False,
 2016-10-17,False,False,False,
 2016-10-18,False,False,False,
-2016-10-19,False,False,False,
+2016-10-19,True,True,True,Vacances de la Toussaint
 2016-10-20,True,True,True,Vacances de la Toussaint
 2016-10-21,True,True,True,Vacances de la Toussaint
 2016-10-22,True,True,True,Vacances de la Toussaint
