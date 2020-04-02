@@ -2,8 +2,7 @@
 import unittest
 from datetime import datetime
 from datetime import timedelta
-import json
-import urllib.request
+import requests
 
 import pandas as pd
 
@@ -152,8 +151,9 @@ class DataTest(unittest.TestCase):
         self.assertEquals(diff.sum(), expected)
 
     def test_with_dila_data(self):
-        with urllib.request.urlopen(self.DILA_JSON_URL) as url:
-            holidays = json.loads(url.read().decode())["Calendrier"]
+        r = requests.get(self.DILA_JSON_URL)
+        r.raise_for_status()
+        holidays = r.json()["Calendrier"]
 
         zones_cols = [f"Zone {zone}" for zone in self.ZONES]
         df = self.data()
