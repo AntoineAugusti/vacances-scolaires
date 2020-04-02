@@ -9681,7 +9681,7 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 2016-07-02,False,False,False,
 2016-07-03,False,False,False,
 2016-07-04,False,False,False,
-2016-07-05,False,False,False,
+2016-07-05,True,True,True,Vacances d'été
 2016-07-06,True,True,True,Vacances d'été
 2016-07-07,True,True,True,Vacances d'été
 2016-07-08,True,True,True,Vacances d'été
