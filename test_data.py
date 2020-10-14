@@ -8,7 +8,7 @@ import pandas as pd
 
 
 class DataTest(unittest.TestCase):
-    START_YEAR, END_YEAR = 1990, 2021
+    START_YEAR, END_YEAR = 1990, 2022
     DILA_JSON_URL = "https://gitlab.com/pidila/sp-simulateurs-data/raw/master/donnees-de-reference/VacancesScolaires.json"
     HOLIDAY_NAMES = [
         "Vacances de la Toussaint",
@@ -48,7 +48,7 @@ class DataTest(unittest.TestCase):
             "nom_vacances",
         ]
 
-        self.assertEquals(list(self.data().columns), expected)
+        self.assertEqual(list(self.data().columns), expected)
 
     def test_no_missing_dates(self):
         start = datetime(self.START_YEAR, 1, 1)
@@ -62,7 +62,7 @@ class DataTest(unittest.TestCase):
         )
 
     def test_nom_vacances(self):
-        self.assertEquals(
+        self.assertEqual(
             sorted(list(self.data().nom_vacances.dropna().unique())),
             sorted(self.HOLIDAY_NAMES + ["Pont de l'Ascension"]),
         )
@@ -71,34 +71,36 @@ class DataTest(unittest.TestCase):
         cols = map(self.col_zone, self.ZONES)
 
         for col in cols:
-            self.assertEquals(self.data()[col].dtype, bool)
+            self.assertEqual(self.data()[col].dtype, bool)
 
-            self.assertEquals(set(self.data()[col].unique()), set([False, True]))
+            self.assertEqual(set(self.data()[col].unique()), set([False, True]))
 
     def test_holiday_name_set_but_not_on_holiday(self):
         df = self.data_with_holiday()
 
         impossible = df[~df.on_holiday & ~df.nom_vacances.isna()]
 
-        self.assertEquals(impossible.shape, (0, 6), impossible)
+        self.assertEqual(impossible.shape, (0, 6), impossible)
 
     def test_on_holiday_without_holidayname(self):
         df = self.data_with_holiday()
 
         impossible = df[df.on_holiday & df.nom_vacances.isna()]
 
-        self.assertEquals(impossible.shape, (0, 6), impossible)
+        self.assertEqual(impossible.shape, (0, 6), impossible)
 
     def test_ascension(self):
         df = self.data()
 
         holidays = df.loc[df.nom_vacances == "Pont de l'Ascension", "date"]
 
-        self.assertEquals(
+        self.assertEqual(
             list(holidays.apply(lambda d: d.date())),
             list(
                 pd.date_range("2019-05-30", "2019-06-02")
                 .union(pd.date_range("2020-05-21", "2020-05-24"))
+                .union(pd.date_range("2021-05-13", "2021-05-17"))
+                .union(pd.date_range("2022-05-26", "2022-05-29"))
                 .to_series()
                 .apply(lambda d: d.date())
             ),
@@ -138,7 +140,7 @@ class DataTest(unittest.TestCase):
         for zone in self.ZONES:
             diff = df_shifted[self.col_zone(zone)] - df[self.col_zone(zone)]
 
-            self.assertEquals(
+            self.assertEqual(
                 diff.abs().sum(),
                 expected,
                 "Zone {zone} seems to have a gap".format(zone=zone),
@@ -148,7 +150,7 @@ class DataTest(unittest.TestCase):
         # ['Vacances d'hiver', 'Vacances d'hiver', 'Vacances de la Toussaint']
         diff = df_shifted["nom_vacances"].fillna("") != df["nom_vacances"].fillna("")
 
-        self.assertEquals(diff.sum(), expected)
+        self.assertEqual(diff.sum(), expected)
 
     def test_with_dila_data(self):
         r = requests.get(self.DILA_JSON_URL)
@@ -173,7 +175,7 @@ class DataTest(unittest.TestCase):
             start, end = holiday["Debut"], holiday["Fin"]
 
             # All dates between start and end are on holiday
-            self.assertEquals(
+            self.assertEqual(
                 df.loc[(df["date"] >= start) & (df["date"] < end)][
                     self.col_zone(zone)
                 ].all(),
