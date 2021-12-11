@@ -11869,11 +11869,11 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 2022-06-29,False,False,False,
 2022-06-30,False,False,False,
 2022-07-01,False,False,False,
-2022-07-02,True,True,True,Vacances d'été
-2022-07-03,True,True,True,Vacances d'été
-2022-07-04,True,True,True,Vacances d'été
-2022-07-05,True,True,True,Vacances d'été
-2022-07-06,True,True,True,Vacances d'été
+2022-07-02,False,False,False,
+2022-07-03,False,False,False,
+2022-07-04,False,False,False,
+2022-07-05,False,False,False,
+2022-07-06,False,False,False,
 2022-07-07,True,True,True,Vacances d'été
 2022-07-08,True,True,True,Vacances d'été
 2022-07-09,True,True,True,Vacances d'été
