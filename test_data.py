@@ -8,7 +8,7 @@ import pandas as pd
 
 
 class DataTest(unittest.TestCase):
-    START_YEAR, END_YEAR = 1990, 2023
+    START_YEAR, END_YEAR = 1990, 2026
     DILA_JSON_URL = "https://gitlab.com/pidila/sp-simulateurs-data/raw/master/donnees-de-reference/VacancesScolaires.json"
     HOLIDAY_NAMES = [
         "Vacances de la Toussaint",
