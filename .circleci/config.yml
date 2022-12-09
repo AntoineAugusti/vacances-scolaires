@@ -49,7 +49,7 @@ jobs:
           name: Run test suite
           command: |
             . venv/bin/activate
-            nosetests .
+            python test_data.py
   test-latest:
     <<: *test-template
     docker:
