@@ -12148,7 +12148,7 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 2023-04-04,False,False,False,
 2023-04-05,False,False,False,
 2023-04-06,False,False,False,
-2023-04-07,True,False,False,Vacances de printemps
+2023-04-07,False,False,False,
 2023-04-08,True,False,False,Vacances de printemps
 2023-04-09,True,False,False,Vacances de printemps
 2023-04-10,True,False,False,Vacances de printemps
@@ -12536,7 +12536,7 @@ date,vacances_zone_a,vacances_zone_b,vacances_zone_c,nom_vacances
 2024-04-26,True,True,False,Vacances de printemps
 2024-04-27,True,True,False,Vacances de printemps
 2024-04-28,True,True,False,Vacances de printemps
-2024-04-29,True,True,False,Vacances de printemps
+2024-04-29,False,True,False,Vacances de printemps
 2024-04-30,False,True,False,Vacances de printemps
 2024-05-01,False,True,False,Vacances de printemps
 2024-05-02,False,True,False,Vacances de printemps
