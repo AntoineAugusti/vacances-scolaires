@@ -1,6 +1,0 @@
-files:
-  - source: data.csv
-    schema: schema.json
-    encoding: utf-8
-settings:
-  row_limit: 100000
