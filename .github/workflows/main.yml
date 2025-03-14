@@ -7,21 +7,14 @@ on:
 
 jobs:
   build:
-    name: Test on ${{ matrix.os }} with Python ${{ matrix.python }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        python: ['3.x', '3.6', '3.7', 'pypy3' ]
-        os: ['ubuntu-latest']
+    name: Test
+    runs-on: 'ubuntu-latest'
     steps:
-      - uses: actions/checkout@master
-      - name: Setup python
-        uses: actions/setup-python@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python }}
-          architecture: x64
+          python-version: '3.13'
       - name: Pip install
         run: pip install -r requirements.txt
       - name: Run tests
-        run: nosetests .
+        run: python test_data.py
