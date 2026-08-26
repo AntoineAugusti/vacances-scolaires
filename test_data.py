@@ -8,7 +8,7 @@ import pandas as pd
 
 
 class DataTest(unittest.TestCase):
-    START_YEAR, END_YEAR = 1990, 2027
+    START_YEAR, END_YEAR = 1990, 2028
     DILA_JSON_URL = "https://gitlab.com/pidila/sp-simulateurs-data/raw/master/donnees-de-reference/VacancesScolaires.json"
     HOLIDAY_NAMES = [
         "Vacances de la Toussaint",
@@ -102,6 +102,7 @@ class DataTest(unittest.TestCase):
                 .union(pd.date_range("2021-05-13", "2021-05-17"))
                 .union(pd.date_range("2022-05-26", "2022-05-29"))
                 .union(pd.date_range("2027-05-06", "2027-05-08"))
+                .union(pd.date_range("2028-05-26", "2028-05-27"))
                 .to_series()
                 .apply(lambda d: d.date())
             ),

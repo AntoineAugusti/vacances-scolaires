@@ -1,7 +1,7 @@
 [![Software License](https://img.shields.io/badge/Licence-Licence%20Ouverte-orange.svg?style=flat-square)](https://github.com/AntoineAugusti/vacances-scolaires/blob/master/LICENSE.md)
 
 # Vacances scolaires
-Recense les vacances scolaires en France de l'année scolaire 1990/1991 à l'année scolaire 2025/2026 dans un fichier CSV unique.
+Recense les vacances scolaires en France de l'année scolaire 1990/1991 à l'année scolaire 2027/2028 dans un fichier CSV unique.
 
 ## Modèle de données
 
